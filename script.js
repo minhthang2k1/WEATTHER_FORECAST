@@ -77,7 +77,7 @@ function callAPI() {
       `;
       temprain.innerHTML = temprains;
       suntoday.innerHTML = `
-        <h3 class="mt-4 mx-2"> ${data.current.last_updated
+        <h3 class="mt-4 mx-2"> ${data.location.localtime
           .slice(0, 10)
           .split("-")
           .reverse()
