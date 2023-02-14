@@ -9,13 +9,13 @@ const valueInput = document.querySelector("input");
 
 // API
 let myAPI =
-  "http://api.weatherapi.com/v1/forecast.json?key=899f6a71bc1f49a4a1431149230802&q=vietnam&days=8&aqi=yes&alerts=no";
+  "https://api.weatherapi.com/v1/forecast.json?key=899f6a71bc1f49a4a1431149230802&q=vietnam&days=8&aqi=yes&alerts=no";
 
 // HANDLE BUTTON SEARCH COUNTRY
 function handleSearch() {
   const value = valueInput.value;
   if (value) {
-    myAPI = `http://api.weatherapi.com/v1/forecast.json?key=899f6a71bc1f49a4a1431149230802&q=${value.toUpperCase()}&days=8&aqi=yes&alerts=no`;
+    myAPI = `https://api.weatherapi.com/v1/forecast.json?key=899f6a71bc1f49a4a1431149230802&q=${value.toUpperCase()}&days=8&aqi=yes&alerts=no`;
     valueInput.value = "";
   } else {
     valueInput.value = "";
