@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: #000; */
+}
+
+#home {
+  width: 100%;
+  /* position: fixed; */
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#navbar {
+  text-align: center;
+  background-color: rgb(227, 224, 224);
+  border-radius: 10px;
+}
+
+.btn-type {
+  width: 70%;
+}
+
+.btn-type:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+#navbar .logo img {
+  margin: 16px 0 45px 0;
+  width: 70%;
+}
+
+.btn-seemore {
+  width: 70%;
+}
+
+.btn-seemore:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+input {
+  background-color: rgb(227, 224, 224);
+  border: none;
+  caret-color: #460e0e;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+#weather-today .search {
+  background-color: rgb(227, 224, 224);
+  padding: 6px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+#weather-today .btn-search {
+  border: none;
+  background-color: rgb(227, 224, 224);
+}
+
+#weather-today .rain-temp-sun {
+  display: flex;
+  justify-content: space-around;
+}
+
+#weather-today .sun-today img {
+  width: 120px;
+  height: 120px;
+}
+
+#weather-today .hour-forecast li {
+  display: flex;
+  flex-direction: column;
+}
+
+#weather-today .hour-forecast {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  text-align: center;
+}
+
+#weather-today .hour-forecast ul:first-child {
+  border: none;
+}
+
+#weather-today .hour-forecast ul {
+  padding: 0;
+  margin: 0;
+  border-left: solid 1px #ccc;
+}
+
+#weather-today .today-forecast {
+  padding: 16px;
+  background-color: rgb(227, 224, 224);
+  border-radius: 30px;
+  margin-bottom: 16px;
+}
+
+#weather-today .air-condition {
+  background-color: rgb(227, 224, 224);
+  padding: 16px;
+  border-radius: 30px;
+}
+
+#weather-today .air-condition .wind-rain {
+  justify-content: space-between;
+}
+
+#day-forecast {
+  padding: 16px;
+  border-radius: 30px;
+  background-color: rgb(227, 224, 224);
+  margin-top: 30px;
+}
+
+#day-forecast .day-forecast ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  border-bottom: solid 1px #ccc;
+  text-align: center;
+  margin: 0;
+}
+
+#day-forecast .day-forecast ul:last-child {
+  border: none;
+}
+
+#day-forecast .day-forecast ul:first-child {
+  display: none;
+}
+
+.modal-seemore {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  display: none;
+  animation: fadeIn 0.5s;
+}
+
+.modal-container {
+  width: 900px;
+  min-height: 200px;
+  background: #fff;
+  position: relative;
+  max-width: calc(100% - 32px);
+}
+
+.modal-header {
+  background-color: #009688;
+  line-height: 64px;
+  padding: 16px;
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 4px;
+  justify-content: center;
+}
+
+.icon-header {
+  margin-right: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 9px 16px;
+  color: #fff;
+  cursor: pointer;
+  background-color: red;
+}
+
+.modal-close:hover {
+  opacity: 0.9;
+}
+
+.modal-seemore.open {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    top: -140px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+#mychart {
+  padding: 16px;
+}
+
+.btn-chart {
+  padding: 32px;
+}
+
+.humidity-chart {
+  margin-right: 32px;
+  background-color: #ccc;
+  border: none;
+  color: #000;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.temp-chart {
+  margin-right: 32px;
+  background-color: #000;
+  border: none;
+  color: #fff;
+  padding: 8px;
+  border-radius: 10px;
+}
