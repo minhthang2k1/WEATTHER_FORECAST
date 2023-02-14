@@ -271,4 +271,5 @@ const rainTempSun = document.querySelector(".rain-temp-sun");
 btnMode.addEventListener("click", () => {
   background.children[1].classList.toggle("d-none");
   rainTempSun.classList.toggle("text-white");
+  btnMode.classList.toggle("text-dark");
 });
