@@ -141,10 +141,9 @@ function callAPI() {
         </ul>
       `);
       });
-      console.log(data);
-
       dayforecast.innerHTML = arrForecasts;
 
+      // GET TIME, HOUR AND HUMIDITY ADD TO ARRAY
       let timehour = parseInt(data.current.last_updated.slice(10, 13));
       let arrTime = [];
       let arrTemp = [];
@@ -172,6 +171,7 @@ function callAPI() {
         timehour = timehour + 3;
       }
 
+      // DRAW CHART WITH THE LIBRARY CHARTJS
       new Chart("tempChart", {
         type: "line",
         data: {
@@ -215,6 +215,7 @@ function callAPI() {
     });
 }
 
+// BACKGROUND HANDLE OF CHARTS
 const btnSeemore = document.querySelector(".see-more");
 const modalSeemore = document.querySelector(".modal-seemore");
 const modalClose = document.querySelector(".modal-close");
@@ -238,6 +239,7 @@ modalcontainer.addEventListener("click", function (event) {
   event.stopPropagation();
 });
 
+// HANDLE BUTTONS TO DISPLAY CHART
 const btnTempChart = document.querySelector(".temp-chart");
 const btnHumidityChart = document.querySelector(".humidity-chart");
 const tempChart = document.querySelector("#tempChart");
@@ -261,6 +263,7 @@ btnTempChart.addEventListener("click", () => {
   humidityChart.style.display = "none";
 });
 
+// HANDLE DARK MODE, LIGHT MODE
 const btnMode = document.querySelector(".btn-mode");
 const background = document.querySelector(".back-ground");
 const rainTempSun = document.querySelector(".rain-temp-sun");

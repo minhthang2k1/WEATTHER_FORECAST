@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/* BACKGROUND */
 .back-ground img {
   position: relative;
   width: 100%;
@@ -12,10 +13,7 @@
   position: fixed;
 }
 
-body {
-  /* background-color: #000; */
-}
-
+/* HOME */
 #home {
   width: 100%;
   /* position: fixed; */
@@ -25,12 +23,14 @@ body {
   top: 0;
 }
 
+/* NAVBAR */
 #navbar {
   text-align: center;
   background-color: #fff;
   border-radius: 10px;
 }
 
+/* BUTTON TYPE TEMP_C TEMP_F */
 .btn-type {
   width: 70%;
 }
@@ -41,15 +41,24 @@ body {
   color: #000;
 }
 
+/* LOGO PAGE */
 #navbar .logo img {
   margin: 16px 0 45px 0;
   width: 70%;
 }
 
+/* CHART */
 .see-more {
   width: 70%;
 }
 
+.see-more:hover {
+  background-color: #ccc;
+  color: #000;
+  border: none;
+}
+
+/* MODE LIGHT OR DARK */
 .btn-mode {
   width: 70%;
 }
@@ -59,12 +68,7 @@ body {
   border: none;
 }
 
-.see-more:hover {
-  background-color: #ccc;
-  color: #000;
-  border: none;
-}
-
+/* INPUT */
 input {
   background-color: #fff;
   border: none;
@@ -80,6 +84,7 @@ input:focus {
   color: #000;
 }
 
+/* BUTTON SEARCH */
 #weather-today .search {
   background-color: #fff;
   padding: 6px;
@@ -94,6 +99,7 @@ input:focus {
   background-color: #fff;
 }
 
+/* WEATHER TODAY */
 #weather-today .rain-temp-sun {
   display: flex;
   justify-content: space-around;
@@ -102,6 +108,14 @@ input:focus {
 #weather-today .sun-today img {
   width: 120px;
   height: 120px;
+}
+
+/* WEATHER FORECAST HOURS OF THE DAY */
+#weather-today .today-forecast {
+  padding: 16px;
+  /* background-color: #fff; */
+  border-radius: 30px;
+  margin-bottom: 16px;
 }
 
 #weather-today .hour-forecast li {
@@ -144,13 +158,7 @@ input:focus {
   }
 }
 
-#weather-today .today-forecast {
-  padding: 16px;
-  /* background-color: #fff; */
-  border-radius: 30px;
-  margin-bottom: 16px;
-}
-
+/* WEATHER CONDITIONS OF THE DAY */
 #weather-today .air-condition {
   background-color: #fff;
   padding: 16px;
@@ -161,6 +169,7 @@ input:focus {
   justify-content: space-between;
 }
 
+/* 7 DAY WEATHER FORECAST */
 #day-forecast {
   padding: 16px;
   border-radius: 30px;
@@ -187,6 +196,7 @@ input:focus {
   display: none;
 }
 
+/* CHART */
 .modal-seemore {
   position: fixed;
   top: 0;
@@ -201,7 +211,7 @@ input:focus {
 }
 
 .modal-container {
-  width: 900px;
+  width: 800px;
   min-height: 200px;
   background: #fff;
   position: relative;
@@ -277,4 +287,10 @@ input:focus {
   color: #fff;
   padding: 8px;
   border-radius: 10px;
+}
+
+#tempChart,
+#humidityChart {
+  display: flex;
+  text-align: center;
 }
