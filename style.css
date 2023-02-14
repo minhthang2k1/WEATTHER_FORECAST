@@ -5,6 +5,13 @@
   box-sizing: border-box;
 }
 
+.back-ground img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
 body {
   /* background-color: #000; */
 }
@@ -14,11 +21,13 @@ body {
   /* position: fixed; */
   margin-left: 0;
   margin-right: 0;
+  position: absolute;
+  top: 0;
 }
 
 #navbar {
   text-align: center;
-  background-color: rgb(227, 224, 224);
+  background-color: #fff;
   border-radius: 10px;
 }
 
@@ -27,8 +36,9 @@ body {
 }
 
 .btn-type:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: #ccc;
+  border: none;
+  color: #000;
 }
 
 #navbar .logo img {
@@ -36,17 +46,27 @@ body {
   width: 70%;
 }
 
-.btn-seemore {
+.see-more {
   width: 70%;
 }
 
-.btn-seemore:hover {
-  background-color: #000;
-  color: #fff;
+.btn-mode {
+  width: 70%;
+}
+
+.btn-mode:hover {
+  background-color: #ccc;
+  border: none;
+}
+
+.see-more:hover {
+  background-color: #ccc;
+  color: #000;
+  border: none;
 }
 
 input {
-  background-color: rgb(227, 224, 224);
+  background-color: #fff;
   border: none;
   caret-color: #460e0e;
 }
@@ -57,11 +77,11 @@ input:focus {
 }
 
 ::placeholder {
-  color: #fff;
+  color: #000;
 }
 
 #weather-today .search {
-  background-color: rgb(227, 224, 224);
+  background-color: #fff;
   padding: 6px;
   border-radius: 20px;
   display: flex;
@@ -71,7 +91,7 @@ input:focus {
 
 #weather-today .btn-search {
   border: none;
-  background-color: rgb(227, 224, 224);
+  background-color: #fff;
 }
 
 #weather-today .rain-temp-sun {
@@ -91,7 +111,7 @@ input:focus {
 
 #weather-today .hour-forecast {
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-between;
   align-items: center;
   text-align: center;
 }
@@ -104,17 +124,35 @@ input:focus {
   padding: 0;
   margin: 0;
   border-left: solid 1px #ccc;
+  border-radius: 10px;
+  background: #fff;
+}
+
+#weather-today .hour-forecast ul:hover {
+  animation: bounce 0.5s;
+  animation-timing-function: ease;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
 }
 
 #weather-today .today-forecast {
   padding: 16px;
-  background-color: rgb(227, 224, 224);
+  /* background-color: #fff; */
   border-radius: 30px;
   margin-bottom: 16px;
 }
 
 #weather-today .air-condition {
-  background-color: rgb(227, 224, 224);
+  background-color: #fff;
   padding: 16px;
   border-radius: 30px;
 }
@@ -126,7 +164,7 @@ input:focus {
 #day-forecast {
   padding: 16px;
   border-radius: 30px;
-  background-color: rgb(227, 224, 224);
+  background-color: #fff;
   margin-top: 30px;
 }
 
@@ -138,6 +176,7 @@ input:focus {
   border-bottom: solid 1px #ccc;
   text-align: center;
   margin: 0;
+  background-color: #fff;
 }
 
 #day-forecast .day-forecast ul:last-child {

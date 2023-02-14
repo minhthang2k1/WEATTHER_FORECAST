@@ -53,8 +53,6 @@ function callAPI() {
   fetch(handleSearch())
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-
       const forecasts7Day = data.forecast.forecastday;
       const condition = data.forecast.forecastday[0].day;
       const todayForecast = data.forecast.forecastday[0].hour;
@@ -90,7 +88,7 @@ function callAPI() {
 
       // RENDER TODAY'S FORECAST
       let datas = [];
-      for (let i = 6; i < 24; i += 3) {
+      for (let i = 6; i < 24; i += 4) {
         function handleTypeTempByTodayForecast() {
           let type;
           if (button.innerHTML !== "℃") {
@@ -143,6 +141,7 @@ function callAPI() {
         </ul>
       `);
       });
+      console.log(data);
 
       dayforecast.innerHTML = arrForecasts;
 
@@ -151,7 +150,7 @@ function callAPI() {
       let arrTemp = [];
       let arrHumidity = [];
       for (let i = 0; i < 8; i++) {
-        if (timehour >= 24) {
+        if (timehour + 1 >= 24) {
           arrTime.push(
             data.forecast.forecastday[1].hour[timehour + 1 - 24].time.slice(11)
           );
@@ -216,7 +215,7 @@ function callAPI() {
     });
 }
 
-const btnSeemore = document.querySelector(".btn-seemore");
+const btnSeemore = document.querySelector(".see-more");
 const modalSeemore = document.querySelector(".modal-seemore");
 const modalClose = document.querySelector(".modal-close");
 const modalcontainer = document.querySelector(".modal-container");
@@ -250,7 +249,7 @@ btnHumidityChart.addEventListener("click", () => {
   btnHumidityChart.style.color = "white";
   btnTempChart.style.color = "black";
   tempChart.style.display = "none";
-  humidityChart.style.display = "flex";
+  humidityChart.style.display = "block";
 });
 
 btnTempChart.addEventListener("click", () => {
@@ -258,6 +257,15 @@ btnTempChart.addEventListener("click", () => {
   btnHumidityChart.style.background = "#ccc";
   btnTempChart.style.color = "white";
   btnHumidityChart.style.color = "black";
-  tempChart.style.display = "flex";
+  tempChart.style.display = "block";
   humidityChart.style.display = "none";
+});
+
+const btnMode = document.querySelector(".btn-mode");
+const background = document.querySelector(".back-ground");
+const rainTempSun = document.querySelector(".rain-temp-sun");
+
+btnMode.addEventListener("click", () => {
+  background.children[1].classList.toggle("d-none");
+  rainTempSun.classList.toggle("text-white");
 });
