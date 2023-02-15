@@ -15,7 +15,7 @@
     <!-- css -->
     <link rel="stylesheet" href="./style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <title>Test Midterm</title>
+    <title>WEATHER FORECAST</title>
 </head>
 
 <body>
@@ -34,17 +34,18 @@
             <button class="see-more btn btn-primary mt-4"><i class="fa-solid fa-chart-simple"></i></button>
             <button class="btn btn-primary btn-mode mt-4"><i class="fa-solid fa-moon"></i> </button>
         </div>
-        <div class="col-6" id="weather-today">
+        <div class="col-5" id="weather-today">
             <div class="row search">
                 <input type="text" placeholder="Search for citis" class="col-9">
                 <button class="col-1 btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <div class="row rain-temp-sun">
-                <div class="col-5 rain-temp">
+                <div class="col-6 rain-temp row">
                 </div>
                 <div class="col-5 sun-today"></div>
             </div>
             <div class="today-forecast">
+                <h5>TODAY'S FORECAST</h5>
                 <div class="hour-forecast row">
                 </div>
             </div>
@@ -58,9 +59,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-5" id="day-forecast">
-            <h1 class="mx-5 mb-4">7-DAY FORECAST</h1>
-            <div class="day-forecast">
+        <div class="col-6" id="day-forecast">
+            <h5 class="mx-2 mb-4">10-DAYS WEATHER FORECAST</h5>
+            <div class="day-forecast row">
             </div>
         </div>
 

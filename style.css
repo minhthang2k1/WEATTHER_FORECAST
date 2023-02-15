@@ -28,6 +28,7 @@
   text-align: center;
   background-color: #fff;
   border-radius: 10px;
+  margin-left: 10px;
 }
 
 /* BUTTON TYPE TEMP_C TEMP_F */
@@ -113,7 +114,7 @@ input:focus {
 /* WEATHER FORECAST HOURS OF THE DAY */
 #weather-today .today-forecast {
   padding: 16px;
-  /* background-color: #fff; */
+  background-color: #fff;
   border-radius: 30px;
   margin-bottom: 16px;
 }
@@ -128,6 +129,7 @@ input:focus {
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  padding: 16px;
 }
 
 #weather-today .hour-forecast ul:first-child {
@@ -139,14 +141,10 @@ input:focus {
   margin: 0;
   border-left: solid 1px #ccc;
   border-radius: 10px;
-  background: #fff;
 }
 
 #weather-today .hour-forecast ul:hover {
-  animation: bounce 0.5s;
-  animation-timing-function: ease;
   cursor: pointer;
-  transform: scale(1.2);
 }
 
 @keyframes bounce {
@@ -169,31 +167,47 @@ input:focus {
   justify-content: space-between;
 }
 
-/* 7 DAY WEATHER FORECAST */
+/* 10 DAY WEATHER FORECAST */
+#day-forecast .icon-weather img {
+  width: 300px;
+  height: 200px;
+}
+
+#day-forecast .icon-weather {
+  text-align: center;
+}
+
 #day-forecast {
+  position: absolute;
   padding: 16px;
-  border-radius: 30px;
-  background-color: #fff;
-  margin-top: 30px;
+  right: 0;
+  bottom: 0;
+  margin-top: 36px;
 }
 
 #day-forecast .day-forecast ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0;
+  padding: 16px;
   border-bottom: solid 1px #ccc;
   text-align: center;
-  margin: 0;
+  margin: 10px;
   background-color: #fff;
+  border-radius: 10px;
+}
+
+#day-forecast .day-forecast ul:hover {
+  animation: bounce 0.5s;
+  animation-timing-function: ease;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#day-forecast .day-forecast ul li {
+  display: flex;
+  flex-direction: column;
 }
 
 #day-forecast .day-forecast ul:last-child {
   border: none;
-}
-
-#day-forecast .day-forecast ul:first-child {
-  display: none;
 }
 
 /* CHART */
