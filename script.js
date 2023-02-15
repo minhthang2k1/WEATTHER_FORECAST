@@ -79,9 +79,9 @@ function callAPI() {
         let temprains = [];
         temprains += `
           <div>
-            <h1 class="mt-4 mx-0 col-5">${data.location.name}</h1>
+            <h1 class="mt-4 mx-0">${data.location.name}</h1>
             <p>Chance of rain: ${condition.daily_chance_of_rain}%</p>
-            <h1 class="my-4 mx-0 col-5">${handleTypeTempByToday()}</h1>
+            <h1 class="my-4 mx-0">${handleTypeTempByToday()}</h1>
           </div>
           
         `;
