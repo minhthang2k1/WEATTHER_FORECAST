@@ -9,13 +9,13 @@ const valueInput = document.querySelector("input");
 
 // API
 let myAPI =
-  "https://api.weatherapi.com/v1/forecast.json?key=899f6a71bc1f49a4a1431149230802&q=vietnam&days=10&aqi=yes&alerts=no";
+  "https://api.weatherapi.com/v1/forecast.json?key=899f6a71bc1f49a4a1431149230802&q=vietnam&days=8&aqi=yes&alerts=no";
 
 // HANDLE BUTTON SEARCH COUNTRY
 function handleSearch() {
   const value = valueInput.value;
   if (value) {
-    myAPI = `https://api.weatherapi.com/v1/forecast.json?key=899f6a71bc1f49a4a1431149230802&q=${value.toUpperCase()}&days=10&aqi=yes&alerts=no`;
+    myAPI = `https://api.weatherapi.com/v1/forecast.json?key=899f6a71bc1f49a4a1431149230802&q=${value.toUpperCase()}&days=8&aqi=yes&alerts=no`;
     valueInput.value = "";
   } else {
     valueInput.value = "";
@@ -53,7 +53,6 @@ function callAPI() {
   fetch(handleSearch())
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       const forecasts7Day = data.forecast.forecastday;
       const today = data.current;
       let condition;
@@ -146,10 +145,10 @@ function callAPI() {
         }
         date = forecast.date.split("-").reverse().join("/");
         return (arrForecasts += `
-        <ul class="col-2 mt-2 arr-ul">
-          <li class="">${date.slice(0, 5)}</li>
-          <li class=""><img src="${forecast.day.condition.icon}"/> </li>
-          <li class="">${handleTypeTemp7DayForecast()}</li>
+        <ul class="mt-2 arr-ul row">
+          <li class="col-3">${date.slice(0, 5)}</li>
+          <li class="col-3"><img src="${forecast.day.condition.icon}"/> </li>
+          <li class="col-3">${handleTypeTemp7DayForecast()}</li>
         </ul>
       `);
       });
@@ -241,27 +240,25 @@ function callAPI() {
       ) {
         background.children[1].style.display = "none";
         rainTempSun.style.color = "white";
-        textWeather.style.color = "white";
+        // textWeather.style.color = "white";
         btnMode.style.color = "dark";
         btnMode.addEventListener("click", () => {
           background.children[1].classList.toggle("d-block");
           rainTempSun.classList.toggle("text-dark");
-          textWeather.classList.toggle("text-dark");
+          // textWeather.classList.toggle("text-dark");
           btnMode.classList.toggle("text-white");
         });
       } else {
         btnMode.addEventListener("click", () => {
           background.children[1].classList.toggle("d-none");
           rainTempSun.classList.toggle("text-white");
-          textWeather.classList.toggle("text-white");
+          // textWeather.classList.toggle("text-white");
           btnMode.classList.toggle("text-dark");
         });
       }
 
       const btnUls = document.querySelectorAll(".arr-ul");
       btnUls.forEach((btnul, index) => {
-        console.log(btnul);
-        console.log(index);
         btnul.addEventListener("click", function () {
           handleForecast(index);
         });
