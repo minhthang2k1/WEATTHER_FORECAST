@@ -309,3 +309,32 @@ input:focus {
   display: flex;
   text-align: center;
 }
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 575px) {
+  #navbar .logo img {
+    margin: 0;
+    width: 40%;
+  }
+  .btn-type {
+    margin: 0;
+    width: 20%;
+    margin-right: 16px;
+  }
+  .see-more {
+    margin: 0;
+    margin-right: 16px;
+    width: 20%;
+  }
+  .btn-mode {
+    margin: 0;
+    width: 20%;
+  }
+  #navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+}
