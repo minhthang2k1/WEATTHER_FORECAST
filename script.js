@@ -224,38 +224,9 @@ function callAPI() {
         },
       });
 
-      // HANDLE DARK MODE, LIGHT MODE
-      const btnMode = document.querySelector(".btn-mode");
-      const background = document.querySelector(".back-ground");
-      const rainTempSun = document.querySelector(".rain-temp-sun");
-      const textWeather = document.querySelector("#day-forecast h5");
-
       const timeLastUpdate = parseInt(data.current.last_updated.slice(11, 13));
       const sunset = data.forecast.forecastday[0].astro.sunset.slice(0, 2) + 12;
       const sunrise = data.forecast.forecastday[0].astro.sunrise.slice(0, 2);
-
-      if (
-        timeLastUpdate >= parseInt(sunset) ||
-        timeLastUpdate < parseInt(sunrise)
-      ) {
-        background.children[1].style.display = "none";
-        rainTempSun.style.color = "white";
-        // textWeather.style.color = "white";
-        btnMode.style.color = "dark";
-        btnMode.addEventListener("click", () => {
-          background.children[1].classList.toggle("d-block");
-          rainTempSun.classList.toggle("text-dark");
-          // textWeather.classList.toggle("text-dark");
-          btnMode.classList.toggle("text-white");
-        });
-      } else {
-        btnMode.addEventListener("click", () => {
-          background.children[1].classList.toggle("d-none");
-          rainTempSun.classList.toggle("text-white");
-          // textWeather.classList.toggle("text-white");
-          btnMode.classList.toggle("text-dark");
-        });
-      }
 
       const btnUls = document.querySelectorAll(".arr-ul");
       btnUls.forEach((btnul, index) => {
@@ -315,4 +286,17 @@ btnTempChart.addEventListener("click", () => {
   btnHumidityChart.style.color = "black";
   tempChart.style.display = "block";
   humidityChart.style.display = "none";
+});
+
+// HANDLE DARK MODE, LIGHT MODE
+const btnMode = document.querySelector(".btn-mode");
+const background = document.querySelector(".back-ground");
+const rainTempSun = document.querySelector(".rain-temp-sun");
+const textWeather = document.querySelector("#day-forecast h5");
+
+btnMode.addEventListener("click", () => {
+  background.children[1].classList.toggle("d-none");
+  rainTempSun.classList.toggle("text-white");
+  // textWeather.classList.toggle("text-white");
+  btnMode.classList.toggle("text-dark");
 });
